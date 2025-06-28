@@ -41,7 +41,7 @@ export const VisitorCounter: React.FC = () => {
                 <Zap className="absolute -top-1 -right-1 w-3 h-3 text-cyber-pink animate-ping" />
               )}
             </div>
-            <span className="text-cyber-blue font-pixel text-sm">VISITORS</span>
+            <span className="text-cyber-pink font-pixel text-sm font-bold">VISITORS</span>
           </div>
 
           {/* Counter Display */}
@@ -69,7 +69,7 @@ export const VisitorCounter: React.FC = () => {
             {/* Status indicator */}
             <div className="flex items-center gap-2">
               <div className={`w-2 h-2 rounded-full animate-pulse ${isNewVisitor ? 'bg-cyber-pink' : 'bg-cyber-green'}`} />
-              <span className="text-cyber-green font-pixel text-xs">
+              <span className="text-cyber-blue font-pixel text-xs font-bold">
                 {isNewVisitor ? 'WELCOME CYBER WARRIOR!' : 'SYSTEM ONLINE'}
               </span>
             </div>
@@ -78,8 +78,10 @@ export const VisitorCounter: React.FC = () => {
 
         {/* Additional stats */}
         <div className="mt-4 text-center">
-          <p className="text-cyber-green font-pixel text-xs opacity-80">
-            TRACKING SINCE 2025.01.01 • CYBERPUNK ANALYTICS v2.0
+          <p className="font-pixel text-xs opacity-80">
+            <span className="text-cyber-pink">TRACKING SINCE</span>{' '}
+            <span className="text-cyber-blue">2025.01.01</span>{' '}
+            <span className="text-cyber-green">• CYBERPUNK ANALYTICS v2.0</span>
           </p>
         </div>
       </div>

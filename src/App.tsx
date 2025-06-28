@@ -24,8 +24,9 @@ function App() {
         <div className="absolute top-0 left-0 w-full h-2 bg-cyber-green animate-glow-pulse" />
         <div className="absolute top-0 left-0 w-full h-1 animate-energy-flow opacity-60" />
         <div className="container mx-auto max-w-6xl text-center relative z-10">
-          <p>
-            © 2025 {profileData.name}. All rights reserved.
+          <p className="text-cyber-pink font-bold">
+            © 2025 <span className="text-cyber-blue">{profileData.name}</span>. 
+            <span className="text-cyber-green"> All rights reserved.</span>
           </p>
         </div>
       </footer>

@@ -160,7 +160,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
           {/* Achievements */}
           <div className="w-full">
             <h2 className="text-2xl sm:text-3xl font-bold text-cyber-pink mb-6 sm:mb-8 flex items-center gap-3 break-words">
-              <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-pink flex-shrink-0" />
+              <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-pink flex-shrink-0 animate-glow-pulse" />
               <span>Achievements & Awards</span>
             </h2>
             <div className="space-y-4 w-full">
@@ -171,7 +171,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
           {/* Publications */}
           <div className="w-full">
             <h2 className="text-2xl sm:text-3xl font-bold text-cyber-blue mb-6 sm:mb-8 flex items-center gap-3 break-words">
-              <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-blue flex-shrink-0" />
+              <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-blue flex-shrink-0 animate-glow-pulse" />
               <span>Publications & Research</span>
             </h2>
             <div className="space-y-4 w-full">
@@ -183,7 +183,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
         {/* Certifications */}
         <div className="mt-12 md:mt-16 w-full">
           <h2 className="text-2xl sm:text-3xl font-bold text-cyber-green mb-6 sm:mb-8 flex items-center gap-3 break-words">
-            <Award className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-green flex-shrink-0" />
+            <Award className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-green flex-shrink-0 animate-glow-pulse" />
             <span>Certifications</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">

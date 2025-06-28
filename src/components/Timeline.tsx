@@ -46,7 +46,7 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
           <div className="md:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-cyber-green animate-glow-pulse"></div>
 
           {/* Timeline items */}
-          <div className="md:grid md:grid-cols-2 md:gap-6">
+          <div className="md:grid md:grid-cols-2 md:gap-4">
             {sortedData.map((item, index) => (
               <div
                 key={item.id}
