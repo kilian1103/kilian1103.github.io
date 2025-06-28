@@ -66,10 +66,10 @@ export const DonationButton: React.FC = () => {
                     <button
                       onClick={openConnectModal}
                       type="button"
-                      className="bg-cyber-pink text-cyber-black px-6 py-3 font-bold hover:bg-cyber-blue transition-all duration-300 flex items-center gap-2 border-2 border-cyber-green"
+                      className="vegas-neon-button text-cyber-black px-6 py-3 font-bold flex items-center gap-2 relative"
                     >
-                      <Heart className="w-5 h-5" />
-                      DONATE CRYPTO
+                      <Heart className="w-5 h-5 relative z-10" />
+                      <span className="relative z-10">DONATE CRYPTO</span>
                     </button>
                   );
                 }
@@ -90,10 +90,10 @@ export const DonationButton: React.FC = () => {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setShowDonationModal(true)}
-                      className="bg-cyber-pink text-cyber-black px-6 py-3 font-bold hover:bg-cyber-blue transition-all duration-300 flex items-center gap-2 border-2 border-cyber-green"
+                      className="vegas-neon-button text-cyber-black px-6 py-3 font-bold flex items-center gap-2 relative"
                     >
-                      <Heart className="w-5 h-5" />
-                      DONATE
+                      <Heart className="w-5 h-5 relative z-10" />
+                      <span className="relative z-10">DONATE</span>
                     </button>
                     <button
                       onClick={openAccountModal}
