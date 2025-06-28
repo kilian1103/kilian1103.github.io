@@ -47,17 +47,17 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
   const renderAchievement = (achievement: Achievement) => {
     const content = (
       <div className="flex items-start gap-4">
-        <div className="text-cyber-pink">
+        <div className="text-cyber-pink flex-shrink-0">
           {getIcon(achievement)}
         </div>
-        <div className="flex-1">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-semibold text-cyber-green">{achievement.title}</h3>
-            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+            <h3 className="font-semibold text-cyber-green break-words">{achievement.title}</h3>
+            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green flex-shrink-0 self-start">
               {achievement.year}
             </span>
           </div>
-          <p className="text-cyber-green text-sm">{achievement.description}</p>
+          <p className="text-cyber-green text-sm break-words leading-relaxed">{achievement.description}</p>
         </div>
       </div>
     );
@@ -69,7 +69,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
           href={achievement.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block bg-cyber-black border-2 border-cyber-pink p-6 hover:border-cyber-green transition-colors duration-300 cursor-pointer"
+          className="block bg-cyber-black border-2 border-cyber-pink p-4 sm:p-6 hover:border-cyber-green transition-colors duration-300 cursor-pointer"
         >
           {content}
         </a>
@@ -79,7 +79,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
     return (
       <div
         key={achievement.id}
-        className="bg-cyber-black border-2 border-cyber-pink p-6"
+        className="bg-cyber-black border-2 border-cyber-pink p-4 sm:p-6"
       >
         {content}
       </div>
@@ -92,20 +92,20 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
       href={publication.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-cyber-black border-2 border-cyber-blue p-6 hover:border-cyber-green transition-colors duration-300"
+      className="block bg-cyber-black border-2 border-cyber-blue p-4 sm:p-6 hover:border-cyber-green transition-colors duration-300"
     >
       <div className="flex items-start gap-4">
-        <div className="text-cyber-blue">
+        <div className="text-cyber-blue flex-shrink-0">
           {getIcon(publication)}
         </div>
-        <div className="flex-1">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-semibold text-cyber-green">{publication.title}</h3>
-            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+            <h3 className="font-semibold text-cyber-green break-words">{publication.title}</h3>
+            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green flex-shrink-0 self-start">
               {publication.year}
             </span>
           </div>
-          <p className="text-cyber-green text-sm">{publication.description}</p>
+          <p className="text-cyber-green text-sm break-words leading-relaxed">{publication.description}</p>
         </div>
       </div>
     </a>
@@ -114,17 +114,17 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
   const renderCertification = (certification: Achievement) => {
     const content = (
       <div className="flex items-start gap-4">
-        <div className="text-cyber-green">
+        <div className="text-cyber-green flex-shrink-0">
           {getIcon(certification)}
         </div>
-        <div className="flex-1">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-semibold text-cyber-green">{certification.title}</h3>
-            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+            <h3 className="font-semibold text-cyber-green break-words">{certification.title}</h3>
+            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green flex-shrink-0 self-start">
               {certification.year}
             </span>
           </div>
-          <p className="text-cyber-green text-sm">{certification.description}</p>
+          <p className="text-cyber-green text-sm break-words leading-relaxed">{certification.description}</p>
         </div>
       </div>
     );
@@ -136,7 +136,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
           href={certification.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block bg-cyber-black border-2 border-cyber-green p-6 hover:border-cyber-pink transition-colors duration-300 cursor-pointer"
+          className="block bg-cyber-black border-2 border-cyber-green p-4 sm:p-6 hover:border-cyber-pink transition-colors duration-300 cursor-pointer"
         >
           {content}
         </a>
@@ -146,7 +146,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
     return (
       <div
         key={certification.id}
-        className="bg-cyber-black border-2 border-cyber-green p-6"
+        className="bg-cyber-black border-2 border-cyber-green p-4 sm:p-6"
       >
         {content}
       </div>
@@ -156,37 +156,37 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
   return (
     <section className="py-16 px-4 bg-cyber-black">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Achievements */}
-          <div>
-            <h2 className="text-3xl font-bold text-cyber-pink mb-8 flex items-center gap-3">
-              <Trophy className="w-6 h-6 text-cyber-pink" />
-              Achievements & Awards
+          <div className="w-full">
+            <h2 className="text-2xl sm:text-3xl font-bold text-cyber-pink mb-6 sm:mb-8 flex items-center gap-3 break-words">
+              <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-pink flex-shrink-0" />
+              <span>Achievements & Awards</span>
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 w-full">
               {achievements.map(renderAchievement)}
             </div>
           </div>
 
           {/* Publications */}
-          <div>
-            <h2 className="text-3xl font-bold text-cyber-blue mb-8 flex items-center gap-3">
-              <BookOpen className="w-6 h-6 text-cyber-blue" />
-              Publications & Research
+          <div className="w-full">
+            <h2 className="text-2xl sm:text-3xl font-bold text-cyber-blue mb-6 sm:mb-8 flex items-center gap-3 break-words">
+              <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-blue flex-shrink-0" />
+              <span>Publications & Research</span>
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 w-full">
               {publications.map(renderPublication)}
             </div>
           </div>
         </div>
 
         {/* Certifications */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-cyber-green mb-8 flex items-center gap-3">
-            <Award className="w-6 h-6 text-cyber-green" />
-            Certifications
+        <div className="mt-12 md:mt-16 w-full">
+          <h2 className="text-2xl sm:text-3xl font-bold text-cyber-green mb-6 sm:mb-8 flex items-center gap-3 break-words">
+            <Award className="w-5 h-5 sm:w-6 sm:h-6 text-cyber-green flex-shrink-0" />
+            <span>Certifications</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
             {certifications.map(renderCertification)}
           </div>
         </div>

@@ -37,25 +37,25 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
       {/* Card */}
       <div
         onClick={handleToggle}
-        className={`relative bg-cyber-black border-2 ${type === 'work' ? 'border-cyber-pink' : 'border-cyber-blue'} p-6 cursor-pointer`}>
+        className={`relative bg-cyber-black border-2 ${type === 'work' ? 'border-cyber-pink' : 'border-cyber-blue'} p-6 cursor-pointer overflow-hidden`}>
         <div className="flex justify-between items-start mb-4">
-          <div className="flex-1">
-            <h3 className="text-xl font-bold text-cyber-green mb-1">{title}</h3>
-            <p className={`text-lg font-semibold mb-2 ${type === 'work' ? 'text-cyber-pink' : 'text-cyber-blue'}`}>
+          <div className="flex-1 min-w-0 pr-4">
+            <h3 className="text-xl font-bold text-cyber-green mb-1 break-words">{title}</h3>
+            <p className={`text-lg font-semibold mb-2 break-words ${type === 'work' ? 'text-cyber-pink' : 'text-cyber-blue'}`}>
               {company}
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-cyber-green">
               <div className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
-                <span className="text-sm">{period}</span>
+                <Calendar className="w-4 h-4 flex-shrink-0" />
+                <span className="text-sm break-words">{period}</span>
               </div>
               <div className="flex items-center gap-1">
-                <MapPin className="w-4 h-4" />
-                <span className="text-sm">{location}</span>
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <span className="text-sm break-words">{location}</span>
               </div>
             </div>
           </div>
-          <div className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+          <div className={`transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}>
             {isExpanded ? (
               <ChevronUp className="w-5 h-5 text-cyber-green" />
             ) : (
@@ -65,17 +65,17 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
         </div>
 
         {/* Expandable Content */}
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="pt-4 border-t border-cyber-green">
-            <p className="text-cyber-green mb-4 leading-relaxed">{description}</p>
+        <div className={`transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-none opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="pt-4 border-t border-cyber-green overflow-hidden">
+            <p className="text-cyber-green mb-4 leading-relaxed break-words whitespace-pre-wrap">{description}</p>
             {achievements.length > 0 && (
               <div>
                 <h4 className="font-semibold text-cyber-green mb-2">Key Achievements:</h4>
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {achievements.map((achievement, index) => (
                     <li key={index} className="flex items-start gap-2 text-cyber-green">
                       <span className={`w-1.5 h-1.5 mt-2 flex-shrink-0 ${type === 'work' ? 'bg-cyber-pink' : 'bg-cyber-blue'}`}></span>
-                      <span className="text-sm">{achievement}</span>
+                      <span className="text-sm break-words leading-relaxed">{achievement}</span>
                     </li>
                   ))}
                 </ul>
