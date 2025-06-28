@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Timeline } from './components/Timeline';
 import { AchievementsSection } from './components/AchievementsSection';
+import { VisitorCounter } from './components/VisitorCounter';
 import { profileData, timelineData, achievementsData, publicationsData, certificationsData } from './data/cvData';
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
         publications={publicationsData} 
         certifications={certificationsData}
       />
+      
+      {/* Visitor Counter */}
+      <VisitorCounter />
       
       {/* Footer */}
       <footer className="bg-cyber-black text-cyber-green py-8 px-4 border-t-4 border-cyber-green relative">
