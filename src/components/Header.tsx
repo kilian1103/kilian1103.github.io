@@ -55,12 +55,17 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="relative bg-cyber-black text-cyber-green py-16 px-4 border-b-4 border-cyber-green overflow-hidden">
-      {/* Donation Button - Top Right */}
-      <div className="absolute top-4 right-4 z-20">
+      {/* Donation Button - Desktop: Top Right, Mobile: Hidden (will show above avatar) */}
+      <div className="hidden md:block absolute top-4 right-4 z-20">
         <DonationButton />
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
+        {/* Mobile Donation Button - Above Avatar */}
+        <div className="md:hidden flex justify-center mb-6">
+          <DonationButton />
+        </div>
+
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Profile Picture */}
           <div className="relative">
