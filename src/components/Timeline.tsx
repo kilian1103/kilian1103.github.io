@@ -24,9 +24,9 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
   );
 
   return (
-    <section className="py-16 px-4 bg-cyber-black relative overflow-hidden">
+    <section className="py-12 px-4 bg-cyber-black relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-cyber-pink mb-4">
             Professional Journey
           </h2>
@@ -46,11 +46,11 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
           <div className="md:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-cyber-green animate-glow-pulse"></div>
 
           {/* Timeline items */}
-          <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="md:grid md:grid-cols-2 md:gap-6">
             {sortedData.map((item, index) => (
               <div
                 key={item.id}
-                className={`${index % 2 === 0 ? 'md:pr-4' : 'md:pl-4 md:mt-16'}`}>
+                className={`${index % 2 === 0 ? 'md:pr-4' : 'md:pl-4 md:mt-8'}`}>
                 <TimelineItem
                   {...item}
                   isLeft={index % 2 === 0}

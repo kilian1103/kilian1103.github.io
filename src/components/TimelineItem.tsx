@@ -30,52 +30,52 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
   };
 
   return (
-    <div className={`relative mb-8 ${isLeft ? 'md:pr-8' : 'md:pl-8'}`}>
+    <div className={`relative mb-4 ${isLeft ? 'md:pr-8' : 'md:pl-8'}`}>
       {/* Timeline connector */}
-      <div className={`absolute top-8 w-4 h-4 rounded-full z-20 ${isLeft ? 'md:-right-2' : 'md:-left-2 left-1/2 transform -translate-x-1/2 md:transform-none'} ${type === 'work' ? 'bg-cyber-pink' : 'bg-cyber-blue'} border-4 border-cyber-black`}></div>
+      <div className={`absolute top-6 w-4 h-4 rounded-full z-20 ${isLeft ? 'md:-right-2' : 'md:-left-2 left-1/2 transform -translate-x-1/2 md:transform-none'} ${type === 'work' ? 'bg-cyber-pink' : 'bg-cyber-blue'} border-4 border-cyber-black`}></div>
 
       {/* Card */}
       <div
         onClick={handleToggle}
-        className={`relative bg-cyber-black border-2 ${type === 'work' ? 'border-cyber-pink' : 'border-cyber-blue'} p-6 cursor-pointer overflow-hidden`}>
-        <div className="flex justify-between items-start mb-4">
+        className={`relative bg-cyber-black border-2 ${type === 'work' ? 'border-cyber-pink' : 'border-cyber-blue'} p-4 cursor-pointer overflow-hidden`}>
+        <div className="flex justify-between items-start mb-3">
           <div className="flex-1 min-w-0 pr-4">
-            <h3 className="text-xl font-bold text-cyber-green mb-1 break-words">{title}</h3>
-            <p className={`text-lg font-semibold mb-2 break-words ${type === 'work' ? 'text-cyber-pink' : 'text-cyber-blue'}`}>
+            <h3 className="text-lg font-bold text-cyber-green mb-1 break-words">{title}</h3>
+            <p className={`text-base font-semibold mb-2 break-words ${type === 'work' ? 'text-cyber-pink' : 'text-cyber-blue'}`}>
               {company}
             </p>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-cyber-green">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-cyber-green">
               <div className="flex items-center gap-1">
-                <Calendar className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm break-words">{period}</span>
+                <Calendar className="w-3 h-3 flex-shrink-0" />
+                <span className="text-xs break-words">{period}</span>
               </div>
               <div className="flex items-center gap-1">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm break-words">{location}</span>
+                <MapPin className="w-3 h-3 flex-shrink-0" />
+                <span className="text-xs break-words">{location}</span>
               </div>
             </div>
           </div>
           <div className={`transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}>
             {isExpanded ? (
-              <ChevronUp className="w-5 h-5 text-cyber-green" />
+              <ChevronUp className="w-4 h-4 text-cyber-green" />
             ) : (
-              <ChevronDown className="w-5 h-5 text-cyber-green" />
+              <ChevronDown className="w-4 h-4 text-cyber-green" />
             )}
           </div>
         </div>
 
         {/* Expandable Content */}
         <div className={`transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-none opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="pt-4 border-t border-cyber-green overflow-hidden">
-            <p className="text-cyber-green mb-4 leading-relaxed break-words whitespace-pre-wrap">{description}</p>
+          <div className="pt-3 border-t border-cyber-green overflow-hidden">
+            <p className="text-cyber-green mb-3 leading-relaxed break-words whitespace-pre-wrap text-sm">{description}</p>
             {achievements.length > 0 && (
               <div>
-                <h4 className="font-semibold text-cyber-green mb-2">Key Achievements:</h4>
-                <ul className="space-y-2">
+                <h4 className="font-semibold text-cyber-green mb-2 text-sm">Key Achievements:</h4>
+                <ul className="space-y-1">
                   {achievements.map((achievement, index) => (
                     <li key={index} className="flex items-start gap-2 text-cyber-green">
-                      <span className={`w-1.5 h-1.5 mt-2 flex-shrink-0 ${type === 'work' ? 'bg-cyber-pink' : 'bg-cyber-blue'}`}></span>
-                      <span className="text-sm break-words leading-relaxed">{achievement}</span>
+                      <span className={`w-1 h-1 mt-1.5 flex-shrink-0 ${type === 'work' ? 'bg-cyber-pink' : 'bg-cyber-blue'}`}></span>
+                      <span className="text-xs break-words leading-relaxed">{achievement}</span>
                     </li>
                   ))}
                 </ul>
