@@ -44,11 +44,8 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
     }
   };
 
-  const renderAchievement = (achievement: Achievement) => (
-    <div
-      key={achievement.id}
-      className="bg-cyber-black border-2 border-cyber-pink p-6"
-    >
+  const renderAchievement = (achievement: Achievement) => {
+    const content = (
       <div className="flex items-start gap-4">
         <div className="text-cyber-pink">
           {getIcon(achievement)}
@@ -63,8 +60,31 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
           <p className="text-cyber-green text-sm">{achievement.description}</p>
         </div>
       </div>
-    </div>
-  );
+    );
+
+    if (achievement.url) {
+      return (
+        <a
+          key={achievement.id}
+          href={achievement.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-cyber-black border-2 border-cyber-pink p-6 hover:border-cyber-green transition-colors duration-300 cursor-pointer"
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <div
+        key={achievement.id}
+        className="bg-cyber-black border-2 border-cyber-pink p-6"
+      >
+        {content}
+      </div>
+    );
+  };
 
   const renderPublication = (publication: Achievement) => (
     <a
@@ -72,7 +92,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
       href={publication.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-cyber-black border-2 border-cyber-blue p-6"
+      className="block bg-cyber-black border-2 border-cyber-blue p-6 hover:border-cyber-green transition-colors duration-300"
     >
       <div className="flex items-start gap-4">
         <div className="text-cyber-blue">
@@ -90,6 +110,48 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
       </div>
     </a>
   );
+
+  const renderCertification = (certification: Achievement) => {
+    const content = (
+      <div className="flex items-start gap-4">
+        <div className="text-cyber-green">
+          {getIcon(certification)}
+        </div>
+        <div className="flex-1">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="font-semibold text-cyber-green">{certification.title}</h3>
+            <span className="text-sm text-cyber-green bg-cyber-black px-2 py-1 border border-cyber-green">
+              {certification.year}
+            </span>
+          </div>
+          <p className="text-cyber-green text-sm">{certification.description}</p>
+        </div>
+      </div>
+    );
+
+    if (certification.url) {
+      return (
+        <a
+          key={certification.id}
+          href={certification.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-cyber-black border-2 border-cyber-green p-6 hover:border-cyber-pink transition-colors duration-300 cursor-pointer"
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <div
+        key={certification.id}
+        className="bg-cyber-black border-2 border-cyber-green p-6"
+      >
+        {content}
+      </div>
+    );
+  };
 
   return (
     <section className="py-16 px-4 bg-cyber-black">
@@ -125,7 +187,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({
             Certifications
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {certifications.map(renderAchievement)}
+            {certifications.map(renderCertification)}
           </div>
         </div>
       </div>

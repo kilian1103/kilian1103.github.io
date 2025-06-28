@@ -168,8 +168,9 @@
   }
 
   .vegas-neon-button:hover {
-    animation: dynamic-neon-glow 1s ease-in-out infinite, button-flip 4s ease-in-out infinite;
-    transform: scale(1.05) rotateY(5deg);
+    animation: dynamic-neon-glow 1s ease-in-out infinite;
+    animation-fill-mode: forwards;
+    transform: scale(1.05);
     box-shadow: 
       0 0 25px #FF1493,
       0 0 50px #FF1493,
@@ -187,6 +188,6 @@
   }
 
   .vegas-neon-button:active {
-    transform: scale(0.98) rotateY(10deg);
+    transform: scale(0.98);
   }
 }

@@ -113,21 +113,24 @@ export const achievementsData = [
     title: "Tech Excellence Award",
     description: "Company-wide recognition for outstanding technical leadership and innovation in software development.",
     year: "2023",
-    type: "award" as const
+    type: "award" as const,
+    url: "https://en.wikipedia.org/wiki/Turing_Award"
   },
   {
     id: "3",
-    title: "Women in Tech Leadership Award",
-    description: "Regional recognition for promoting diversity and inclusion in technology workplace.",
+    title: "Forbes 30 Under 30",
+    description: "Recognition in Technology category for innovative contributions to software engineering and entrepreneurship.",
     year: "2022",
-    type: "recognition" as const
+    type: "recognition" as const,
+    url: "https://en.wikipedia.org/wiki/Forbes_30_Under_30"
   },
   {
     id: "4",
     title: "Best Paper Award - ML Conference",
     description: "Academic recognition for research contribution in neural network optimization techniques.",
     year: "2021",
-    type: "award" as const
+    type: "award" as const,
+    url: "https://en.wikipedia.org/wiki/Nobel_Prize_in_Physics"
   }
 ];
 
@@ -174,6 +177,23 @@ export const certificationsData = [
     title: "AWS Solutions Architect Professional",
     description: "Advanced certification demonstrating expertise in designing distributed applications and systems on AWS platform.",
     year: "2023",
-    type: "certification" as const
+    type: "certification" as const,
+    url: "https://en.wikipedia.org/wiki/Amazon_Web_Services"
+  },
+  {
+    id: "2",
+    title: "Google Cloud Professional Cloud Architect",
+    description: "Professional-level certification for designing and managing robust, secure, scalable cloud architecture solutions.",
+    year: "2022",
+    type: "certification" as const,
+    url: "https://en.wikipedia.org/wiki/Google_Cloud_Platform"
+  },
+  {
+    id: "3",
+    title: "Certified Kubernetes Administrator (CKA)",
+    description: "Cloud Native Computing Foundation certification demonstrating skills in Kubernetes administration and troubleshooting.",
+    year: "2021",
+    type: "certification" as const,
+    url: "https://en.wikipedia.org/wiki/Kubernetes"
   }
 ];
