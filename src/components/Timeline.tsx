@@ -26,11 +26,11 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
   return (
     <section className="py-12 px-4 bg-cyber-black relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-cyber-pink mb-4">
+        <div className="text-center mb-12 px-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-cyber-pink mb-4 break-words">
             Professional Journey
           </h2>
-          <p className="text-xl text-cyber-blue max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-cyber-blue max-w-2xl mx-auto break-words leading-relaxed">
             A chronological overview of my career milestones and educational achievements
           </p>
         </div>
